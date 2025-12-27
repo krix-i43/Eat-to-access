@@ -56,9 +56,8 @@ def get_garena_data(eat_token):
             return {"error": "Failed to extract open_id"}
 
         return {
-            "credit": "Lokesh",
-            "Power By": "Telegram : @Flexbasei & @spideerio_yt",
-            "Join For More": "Telegram : @Flexbasei & @spideerio_yt",
+            "credit": "Nivashini",
+            "Power By": "insta : @ft_rosie._ & @krix_i43",
             "status": "success",
             "account_id": account_id,
             "account_nickname": account_nickname,
@@ -76,8 +75,8 @@ def home():
     return """
     <div style="text-align: center; font-family: Arial, sans-serif; margin-top: 50px;">
         <h1 style="color: #2ecc71;">Eat Token Decoder API is Running!</h1>
-        <p><b>Credit:</b> @LipuGaming_ff</p>
-        <p><b>Powered By:</b> @Flexbasei & @spideerio_yt</p>
+        <p><b>Credit:</b> Nivashini</p>
+        <p><b>Powered By:</b> @ft_rosie._ & @krix_i43 </p>
         <hr style="width: 50%; border: 1px solid #eee;">
         <h2 style="color: #7f8c8d;">Use <code>/Eat?eat_token={Your Eat Token}</code> endpoint to get data.</h2>
     </div>
@@ -96,3 +95,4 @@ def get_token_info():
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5030)
+
