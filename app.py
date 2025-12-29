@@ -52,8 +52,6 @@ def get_garena_data(eat_token):
 
         open_id = openid_data.get("open_id")
         
-        if not open_id:
-            return {"error": "Failed to extract open_id"}
 
         return {
             "credit": "Nivashini",
@@ -95,4 +93,5 @@ def get_token_info():
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5030)
+
 
