@@ -152,7 +152,7 @@ button:disabled{background:#475569;}
 
     <div id="mindVoice" style="font-size:13px;opacity:0.85;display:none;"></div>
 
-    <button onclick="decode()">Decode</button>
+    <button onclick="alert('Button click aagudhu da 😄')">Decode</button>
 
     <div id="trollBox"></div>
 
@@ -319,6 +319,7 @@ def get_token_info():
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5030)
+
 
 
 
