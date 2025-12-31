@@ -152,7 +152,7 @@ button:disabled{background:#475569;}
 
     <div id="mindVoice" style="font-size:13px;opacity:0.85;display:none;"></div>
 
-    <button onclick="decode()">Decode</button>
+    <button type="button" onclick="decode()">Decode</button>
 
     <div id="trollBox"></div>
 
@@ -171,10 +171,10 @@ button:disabled{background:#475569;}
         </div>
     </div>
 
-    <button onclick="toggleRaw()">Show Raw JSON</button>
+    <button type="button" onclick="toggleRaw()">Show Raw JSON</button>
     <pre id="raw" class="hidden"></pre>
 
-    <button onclick="openInsta()">📸 Follow on Instagram</button>
+    <button type="button" onclick="openInsta()">📸 Follow on Instagram</button>
 </div>
 
 <div id="toast"></div>
@@ -325,6 +325,7 @@ def get_token_info():
 
     result = get_garena_data(eat_token)
     return jsonify(result)
+
 
 
 
