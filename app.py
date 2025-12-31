@@ -174,7 +174,7 @@ button:disabled{background:#475569;}
     <button type="button" onclick="toggleRaw()">Show Raw JSON</button>
     <pre id="raw" class="hidden"></pre>
 
-    <button type="button" onclick="openInsta()">📸 Follow on Instagram</button>
+    <button id="instaBtn" type="button">📸 Follow on Instagram</button>
 </div>
 
 <div id="toast"></div>
@@ -309,6 +309,12 @@ function toggleRaw(){
 function openInsta(){
     window.open("https://instagram.com/ft_rosie._","_blank");
 }
+// 🔥 SAFE EVENT BINDING (Vercel compatible)
+document.addEventListener("DOMContentLoaded", () => {
+    document.getElementById("decodeBtn").addEventListener("click", decode);
+    document.getElementById("rawBtn").addEventListener("click", toggleRaw);
+    document.getElementById("instaBtn").addEventListener("click", openInsta);
+});
 </script>
 
 </body>
@@ -325,6 +331,7 @@ def get_token_info():
 
     result = get_garena_data(eat_token)
     return jsonify(result)
+
 
 
 
