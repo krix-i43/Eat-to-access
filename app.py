@@ -296,27 +296,6 @@ async function decode(){
     }
 }
 
-    godModeStart();
-
-    const r=await fetch("/Eat?eat_token="+t);
-    const d=await r.json();
-
-    document.getElementById("raw").innerText=JSON.stringify(d,null,2);
-
-    if(!d.access_token){
-        godModeExpiry();
-        return;
-    }
-
-    tokenValue=d.access_token;
-    document.getElementById("uid").innerText=d.account_id;
-    document.getElementById("name").innerText=d.account_nickname;
-    document.getElementById("region").innerText=d.region;
-    document.getElementById("accesstoken").innerText=tokenValue;
-
-    document.getElementById("smart").classList.remove("hidden");
-    startCountdown(7200); // example: 2 hours
-    godModeSuccess();
 }
 
 /* ---------- UTILS ---------- */
@@ -346,6 +325,7 @@ def get_token_info():
 
     result = get_garena_data(eat_token)
     return jsonify(result)
+
 
 
 
