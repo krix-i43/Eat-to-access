@@ -152,7 +152,7 @@ button:disabled{background:#475569;}
 
     <div id="mindVoice" style="font-size:13px;opacity:0.85;display:none;"></div>
 
-    <button onclick="alert('Button click aagudhu da 😄')">Decode</button>
+    <button onclick="decode()">Decode</button>
 
     <div id="trollBox"></div>
 
@@ -317,8 +317,6 @@ def get_token_info():
     result = get_garena_data(eat_token)
     return jsonify(result)
 
-if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5030)
 
 
 
