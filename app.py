@@ -263,8 +263,38 @@ function startCountdown(sec){
 /* ---------- MAIN DECODE ---------- */
 let tokenValue=null;
 async function decode(){
-    const t=document.getElementById("token").value;
+    const t = document.getElementById("token").value;
     if(!t){ toast("Enter token"); return; }
+
+    godModeStart();
+
+    try {
+        const r = await fetch("/Eat?eat_token=" + encodeURIComponent(t));
+        const d = await r.json();
+
+        document.getElementById("raw").innerText =
+            JSON.stringify(d,null,2);
+
+        if(!d.access_token){
+            godModeExpiry();
+            return;
+        }
+
+        tokenValue = d.access_token;
+        document.getElementById("uid").innerText = d.account_id || "N/A";
+        document.getElementById("name").innerText = d.account_nickname || "N/A";
+        document.getElementById("region").innerText = d.region || "N/A";
+        document.getElementById("accesstoken").innerText = tokenValue;
+
+        document.getElementById("smart").classList.remove("hidden");
+        startCountdown(7200);
+        godModeSuccess();
+
+    } catch (e) {
+        document.getElementById("trollBox").innerText =
+            "❌ Backend response varala da 😅\n(Vercel Flask issue)";
+    }
+}
 
     godModeStart();
 
@@ -316,6 +346,7 @@ def get_token_info():
 
     result = get_garena_data(eat_token)
     return jsonify(result)
+
 
 
 
